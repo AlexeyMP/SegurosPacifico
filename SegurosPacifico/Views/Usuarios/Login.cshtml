@@ -1,0 +1,98 @@
+﻿
+@model SegurosPacifico.Models.Usuario
+
+<style>
+    form-group{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    h3{
+        text-align: center;
+    }
+
+    h4 {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .row2{
+        margin-left: 73px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .col-md-4{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 Panel_Contenido">
+
+            <div class="form-group">
+
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+
+                    <div class="col-md-6" style="margin-left:8px">
+                        <h3>Inicio de Sesión</h3>
+                    </div>
+
+                    <div class="col-md-3">
+                    </div>
+                </div>
+
+
+                <h4>Email</h4>
+                <div class="row2">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email,new { htmlAttributes = new {@class="form-control"}})
+                            @Html.ValidationMessageFor(model => model.Email,"", new {@class="text-danger"})
+                        </div>
+
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+
+
+                <h4>Contraseña</h4>
+                <div class="row2">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Password,new { htmlAttributes = new {@class="form-control"}})
+                            @Html.ValidationMessageFor(model => model.Password,"", new {@class="text-danger"})
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+
+
+                <div class="row" style="margin-top:25px">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <input type="submit" value="Iniciar Sesión" class="btn btn-primary" />
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+
+
+
+}
